@@ -5,6 +5,7 @@ import Clock from './components/Clock';
 import Comment from './components/comment/Comment';
 import { CommentProps } from './components/comment/comment.constants';
 import BasicButton from './components/buttons/BasicButton';
+import Greetings from './components/conditional-rendering/Greetings';
 
 const logo = require('./logo.svg');
 
@@ -50,6 +51,11 @@ class App extends React.Component {
                 <div>
                     <h2>Button Events</h2>
                     <BasicButton/>
+                </div>
+                <div>
+                    <h2>Greetings</h2>
+                    Guest: <Greetings isLoggedIn={false}/>
+                    User: <Greetings isLoggedIn={true}/>
                 </div>
             </div>
         );

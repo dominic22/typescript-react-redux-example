@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Author } from './comment.constants';
 
-// avatar
 function Avatar(props: {user: Author}) {
     return (
         <img
