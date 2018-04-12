@@ -4,6 +4,7 @@ import Hello from './components/Hello';
 import Clock from './components/Clock';
 import Comment from './components/comment/Comment';
 import { CommentProps } from './components/comment/comment.constants';
+import BasicButton from './components/buttons/BasicButton';
 
 const logo = require('./logo.svg');
 
@@ -32,20 +33,24 @@ class App extends React.Component {
                 <Clock/>
                 <div>
                     <h2>Comments</h2>
-                    <Comment author={comment.author} text={comment.text} date={comment.date}/>
+                    <Comment comment={comment}/>
                     <Comment
-                        author={
-                            {
-                                name: 'Dummy Author',
-                                avatarUrl:
+                        comment={{
+                            author:
+                                {
+                                    name: 'Dummy Author',
+                                    avatarUrl:
                                     'https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-256.png'
-                            }
-                        }
-                        text="This is a dummy comment."
-                        date={new Date()}
+                                },
+                            text: 'This is a dummy comment.',
+                            date: new Date()
+                        }}
                     />
                 </div>
-
+                <div>
+                    <h2>Button Events</h2>
+                    <BasicButton/>
+                </div>
             </div>
         );
     }

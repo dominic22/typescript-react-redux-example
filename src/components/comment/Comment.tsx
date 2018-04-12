@@ -6,15 +6,15 @@ function formatDate(date: Date) {
     return date.toLocaleDateString();
 }
 
-function Comment(props: CommentProps) {
+function Comment(props: { comment: CommentProps}) {
     return (
         <div className="Comment">
-            <UserInfo user={props.author}/>
+            <UserInfo user={props.comment.author}/>
             <div className="Comment-text">
-                {props.text}
+                {props.comment.text}
             </div>
             <div className="Comment-date">
-                {formatDate(props.date)}
+                {formatDate(props.comment.date)}
             </div>
         </div>
     );
