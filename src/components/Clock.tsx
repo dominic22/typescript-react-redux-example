@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-// function component as arrow function
+// functional component as arrow function
 // const Clock = (props: { date: Date }) => {
 //     return (
 //         <div>
@@ -10,7 +10,7 @@ import * as React from 'react';
 //     );
 // };
 
-// function component as function
+// functional component as function
 // function Clock(props: { date: Date }) {
 //     return (
 //         <div>
@@ -56,7 +56,7 @@ class Clock extends React.Component<Props, State> {
     render() {
         return (
             <div>
-                <h1>Clock timer</h1>
+                <h2>Clock timer</h2>
                 <p>It is {this.state.date.toLocaleTimeString()}.</p>
             </div>
         );
