@@ -1,8 +1,14 @@
 import * as React from 'react';
 import LoginButton from '../buttons/LoginButton';
 import LogoutButton from '../buttons/LogoutButton';
+import Greetings from '../conditional-rendering/Greetings';
 
-class LoginControl extends React.Component {
+interface Props { /* declare your component's props here */ }
+interface State {
+    isLoggedIn: boolean;
+}
+
+class LoginControl extends React.Component<Props, State> {
     constructor(props: any) {
         super(props);
         this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -29,9 +35,11 @@ class LoginControl extends React.Component {
 
         return (
             <div>
-                <Greeting isLoggedIn={isLoggedIn}/>
+                <Greetings isLoggedIn={isLoggedIn}/>
                 {button}
             </div>
         );
     }
 }
+
+export default LoginControl;

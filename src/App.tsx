@@ -6,6 +6,7 @@ import Comment from './components/comment/Comment';
 import { CommentProps } from './components/comment/comment.constants';
 import BasicButton from './components/buttons/BasicButton';
 import Greetings from './components/conditional-rendering/Greetings';
+import LoginControl from './components/controls/LoginControl';
 
 const logo = require('./logo.svg');
 
@@ -54,9 +55,10 @@ class App extends React.Component {
                 </div>
                 <div>
                     <h2>Greetings</h2>
-                    Guest: <Greetings isLoggedIn={false}/>
-                    User: <Greetings isLoggedIn={true}/>
+                    LoggedOut: <Greetings isLoggedIn={false}/>
+                    LoggedIn: <Greetings isLoggedIn={true}/>
                 </div>
+                <LoginControl/>
             </div>
         );
     }
