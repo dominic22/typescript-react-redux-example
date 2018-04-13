@@ -27,16 +27,23 @@ class LoginControl extends React.Component<Props, State> {
     render() {
         const isLoggedIn = this.state.isLoggedIn;
 
-        const button = isLoggedIn ? (
-            <LogoutButton onClick={this.handleLogoutClick}/>
-        ) : (
-            <LoginButton onClick={this.handleLoginClick}/>
-        );
+        // before change
+        // const button = isLoggedIn ? (
+        //     <LogoutButton onClick={this.handleLogoutClick}/>
+        // ) : (
+        //     <LoginButton onClick={this.handleLoginClick}/>
+        // );
+        // before change button was added as following in the markup below now we use inline expressions
+        // {button}
 
         return (
             <div>
                 <Greetings isLoggedIn={isLoggedIn}/>
-                {button}
+                {isLoggedIn ? (
+                    <LogoutButton onClick={this.handleLogoutClick}/>
+                ) : (
+                    <LoginButton onClick={this.handleLoginClick}/>
+                )}
             </div>
         );
     }

@@ -7,6 +7,10 @@ import { CommentProps } from './components/comment/comment.constants';
 import BasicButton from './components/buttons/BasicButton';
 import Greetings from './components/conditional-rendering/Greetings';
 import LoginControl from './components/controls/LoginControl';
+import Mailbox from './components/mailbox/Mailbox';
+import Page from './components/WarningBanner';
+import NumberList from './components/lists-and-keys/NumberList';
+import { Blog, BLOG_POSTS } from './components/lists-and-keys/Blog';
 
 const logo = require('./logo.svg');
 
@@ -18,6 +22,8 @@ const comment: CommentProps = {
         avatarUrl: 'http://placekitten.com/g/64/64',
     },
 };
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
 
 class App extends React.Component {
     render() {
@@ -38,14 +44,15 @@ class App extends React.Component {
                     <Comment comment={comment}/>
                     <Comment
                         comment={{
-                            author:
-                                {
-                                    name: 'Dummy Author',
-                                    avatarUrl:
-                                    'https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-simple-256.png'
-                                },
-                            text: 'This is a dummy comment.',
-                            date: new Date()
+                        author:
+                            {
+                                name: 'Dummy Author',
+                                avatarUrl:
+                                    'https://cdn1.iconfinder.com/data/icons/' +
+                                    'ninja-things-1/1772/ninja-simple-256.png'
+                            },
+                        text: 'This is a dummy comment.',
+                        date: new Date()
                         }}
                     />
                 </div>
@@ -59,6 +66,13 @@ class App extends React.Component {
                     LoggedIn: <Greetings isLoggedIn={true}/>
                 </div>
                 <LoginControl/>
+                <Mailbox unreadMessages={messages}/>
+                <div>
+                    <p>Component which is hiding itself</p>
+                    <Page/>
+                </div>
+                <NumberList numbers={[1, 2, 3, 4, 5]}/>
+                <Blog posts={BLOG_POSTS}/>
             </div>
         );
     }
