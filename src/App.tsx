@@ -11,6 +11,8 @@ import Mailbox from './components/mailbox/Mailbox';
 import Page from './components/WarningBanner';
 import NumberList from './components/lists-and-keys/NumberList';
 import { Blog, BLOG_POSTS } from './components/lists-and-keys/Blog';
+import EssayForm from './components/forms/EssayForm';
+import NameForm from './components/forms/NameForm';
 
 const logo = require('./logo.svg');
 
@@ -73,6 +75,8 @@ class App extends React.Component {
                 </div>
                 <NumberList numbers={[1, 2, 3, 4, 5]}/>
                 <Blog posts={BLOG_POSTS}/>
+                <NameForm/>
+                <EssayForm/>
             </div>
         );
     }
