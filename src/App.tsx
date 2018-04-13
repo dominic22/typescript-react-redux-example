@@ -13,6 +13,7 @@ import NumberList from './components/lists-and-keys/NumberList';
 import { Blog, BLOG_POSTS } from './components/lists-and-keys/Blog';
 import EssayForm from './components/forms/EssayForm';
 import NameForm from './components/forms/NameForm';
+import Calculator from './components/lifting-state-up/Calculator';
 
 const logo = require('./logo.svg');
 
@@ -77,6 +78,7 @@ class App extends React.Component {
                 <Blog posts={BLOG_POSTS}/>
                 <NameForm/>
                 <EssayForm/>
+                <Calculator/>
             </div>
         );
     }
